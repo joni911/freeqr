@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free QR Code Generator - Create Beautiful Custom QR Codes Online</title>
+    <meta name="description" content="Generate beautiful custom QR codes instantly for free. Choose from 6 styles, customize colors, and download as PNG. No login, no signup, no limits. Perfect for URLs, text, WiFi, contacts, and more.">
+    <meta name="keywords" content="QR code generator, free QR code, custom QR code, QR code maker, online QR generator, QR code creator, PNG QR code, styled QR code, QR code without login, QR code for URL, QR code for text, QR code design, colorful QR code">
+    <meta name="author" content="QR Code Generator">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://qrcode-generator.example.com/">
+    <meta name="theme-color" content="#667eea">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qrcode-generator.example.com/">
+    <meta property="og:title" content="Free QR Code Generator - Create Beautiful Custom QR Codes Online">
+    <meta property="og:description" content="Generate beautiful custom QR codes instantly for free. Choose from 6 styles, customize colors, and download as PNG. No login required!">
+    <meta property="og:image" content="https://qrcode-generator.example.com/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="QR Code Generator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://qrcode-generator.example.com/">
+    <meta name="twitter:title" content="Free QR Code Generator - Create Beautiful Custom QR Codes Online">
+    <meta name="twitter:description" content="Generate beautiful custom QR codes instantly for free. Choose from 6 styles, customize colors, and download as PNG. No login required!">
+    <meta name="twitter:image" content="https://qrcode-generator.example.com/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📱</text></svg>">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Free QR Code Generator",
+        "url": "https://qrcode-generator.example.com/",
+        "description": "Generate beautiful custom QR codes instantly for free. Choose from 6 styles, customize colors, and download as PNG. No login, no signup, no limits.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "browserRequirements": "Requires JavaScript",
+        "screenshot": "https://qrcode-generator.example.com/screenshot.png",
+        "featureList": [
+            "6 QR code styles",
+            "Custom foreground and background colors",
+            "Instant preview",
+            "PNG download",
+            "No login required",
+            "Free to use"
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is this QR code generator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our QR code generator is completely free to use. No hidden fees, no signup required, and no limits on how many QR codes you can generate."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account to generate QR codes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, you don't need to create an account or login. Simply enter your URL or text, customize your QR code, and download it instantly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What formats can I download the QR code in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can download your QR code as a high-quality PNG image file, which is compatible with all devices and platforms."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I customize the colors of my QR code?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, you can choose any custom color for both the foreground and background of your QR code. We also provide preset color palettes for quick selection."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .main-container { padding: 30px 0 50px; }
+        .card {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        .card-header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        .card-header p {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 8px 0 0;
+            font-size: 1rem;
+        }
+        .card-body { padding: 30px; }
+        .form-control {
+            border-radius: 12px;
+            padding: 14px 18px;
+            border: 2px solid #e8e8e8;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.25rem rgba(102, 126, 234, 0.2);
+        }
+        .section-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title i { color: #667eea; }
+        .style-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .style-card {
+            border: 2px solid #e8e8e8;
+            border-radius: 12px;
+            padding: 12px 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            background: white;
+        }
+        .style-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+        .style-card.active {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.25);
+        }
+        .style-card .icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        .style-card .icon i { font-size: 1.5rem; color: #667eea; }
+        .style-card span {
+            font-size: 0.75rem;
+            color: #555;
+            font-weight: 500;
+        }
+        .color-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .color-picker-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .color-picker-wrapper label {
+            font-weight: 500;
+            color: #444;
+            min-width: 100px;
+            margin: 0;
+        }
+        .color-picker-wrapper input[type="color"] {
+            width: 50px;
+            height: 40px;
+            border: 2px solid #e8e8e8;
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 3px;
+        }
+        .color-picker-wrapper .color-value {
+            font-family: monospace;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .preset-colors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        .preset-color {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .preset-color:hover {
+            transform: scale(1.15);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        }
+        .preset-color.active {
+            border-color: #333;
+            transform: scale(1.1);
+        }
+        .slider-group {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px 18px;
+            margin-bottom: 12px;
+        }
+        .slider-group label {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider-group label span {
+            color: #667eea;
+            font-weight: 700;
+        }
+        .custom-range::-webkit-slider-thumb { background: #667eea; }
+        .custom-range::-webkit-slider-runnable-track {
+            height: 6px;
+            border-radius: 3px;
+            background: #e8e8e8;
+        }
+        .btn-generate {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 35px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: white;
+        }
+        .btn-generate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+        .btn-preview {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 14px 35px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            color: white;
+        }
+        .btn-preview:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
+            color: white;
+        }
+        .preview-container {
+            display: none;
+            text-align: center;
+            margin-top: 25px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        .preview-container.show { display: block; }
+        .preview-container canvas {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .loading {
+            display: none;
+            padding: 20px;
+        }
+        .loading.show { display: block; }
+        .features {
+            margin-top: 40px;
+            padding: 0 15px;
+        }
+        .feature-item {
+            text-align: center;
+            padding: 25px 15px;
+        }
+        .feature-item i {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+        .feature-item h5 {
+            color: white;
+            font-weight: 600;
+        }
+        .feature-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.15);
+            padding: 25px 0;
+            margin-top: 20px;
+            text-align: center;
+        }
+        footer p {
+            color: rgba(255, 255, 255, 0.85);
+            margin: 0;
+        }
+        .alert { border-radius: 12px; }
+        .tab-content { padding-top: 0; }
+        .nav-tabs .nav-link {
+            border-radius: 10px 10px 0 0;
+            color: #666;
+            font-weight: 500;
+        }
+        .nav-tabs .nav-link.active {
+            color: #667eea;
+            font-weight: 600;
+        }
+        @media (max-width: 576px) {
+            .card-header h1 { font-size: 1.6rem; }
+            .style-grid { grid-template-columns: repeat(3, 1fr); }
+            .btn-generate, .btn-preview { width: 100%; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container main-container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h1><i class="fas fa-qrcode"></i> QR Code Generator</h1>
+                        <p>Create beautiful QR codes instantly - Free, No Login Required!</p>
+                    </div>
+                    <div class="card-body">
+                        <div id="error-alert" class="alert alert-danger alert-dismissible fade show" style="display: none;" role="alert">
+                            <i class="fas fa-exclamation-circle"></i> <span id="error-message"></span>
+                            <button type="button" class="close" onclick="this.parentElement.style.display='none'">
+                                <span>&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="section-title"><i class="fas fa-link"></i> Enter URL or Text</label>
+                            <input type="text" class="form-control form-control-lg" id="url-input"
+                                   placeholder="https://example.com or any text">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="section-title"><i class="fas fa-palette"></i> Choose Style</label>
+                            <div class="style-grid" id="style-grid">
+                                <div class="style-card active" data-style="squares" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-th"></i></div>
+                                    <span>Squares</span>
+                                </div>
+                                <div class="style-card" data-style="dots" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-circle"></i></div>
+                                    <span>Dots</span>
+                                </div>
+                                <div class="style-card" data-style="rounded" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-square"></i></div>
+                                    <span>Rounded</span>
+                                </div>
+                                <div class="style-card" data-style="diamonds" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-gem"></i></div>
+                                    <span>Diamonds</span>
+                                </div>
+                                <div class="style-card" data-style="star" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-star"></i></div>
+                                    <span>Stars</span>
+                                </div>
+                                <div class="style-card" data-style="striped" onclick="selectStyle(this)">
+                                    <div class="icon"><i class="fas fa-bars"></i></div>
+                                    <span>Striped</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="color-section">
+                            <label class="section-title"><i class="fas fa-fill-drip"></i> Colors</label>
+
+                            <div class="color-picker-wrapper">
+                                <label>Foreground:</label>
+                                <input type="color" id="fg-color" value="#000000">
+                                <span class="color-value" id="fg-value">#000000</span>
+                            </div>
+
+                            <div class="preset-colors" id="fg-presets">
+                                <div class="preset-color active" style="background: #000000" data-color="#000000" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #1a1a2e" data-color="#1a1a2e" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #e74c3c" data-color="#e74c3c" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #3498db" data-color="#3498db" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #2ecc71" data-color="#2ecc71" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #9b59b6" data-color="#9b59b6" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #f39c12" data-color="#f39c12" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #1abc9c" data-color="#1abc9c" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #e91e63" data-color="#e91e63" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #00bcd4" data-color="#00bcd4" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #ff5722" data-color="#ff5722" onclick="setFgColor(this)"></div>
+                                <div class="preset-color" style="background: #607d8b" data-color="#607d8b" onclick="setFgColor(this)"></div>
+                            </div>
+
+                            <hr style="margin: 15px 0;">
+
+                            <div class="color-picker-wrapper">
+                                <label>Background:</label>
+                                <input type="color" id="bg-color" value="#ffffff">
+                                <span class="color-value" id="bg-value">#ffffff</span>
+                            </div>
+
+                            <div class="preset-colors" id="bg-presets">
+                                <div class="preset-color active" style="background: #ffffff; border: 1px solid #ddd;" data-color="#ffffff" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #f8f9fa" data-color="#f8f9fa" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #fff3e0" data-color="#fff3e0" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #e8f5e9" data-color="#e8f5e9" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #e3f2fd" data-color="#e3f2fd" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #fce4ec" data-color="#fce4ec" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #f3e5f5" data-color="#f3e5f5" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #1a1a2e" data-color="#1a1a2e" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #0d1b2a" data-color="#0d1b2a" onclick="setBgColor(this)"></div>
+                                <div class="preset-color" style="background: #2d3436" data-color="#2d3436" onclick="setBgColor(this)"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="slider-group">
+                                    <label>Size <span id="size-value">300</span>px</label>
+                                    <input type="range" class="custom-range" id="size-slider" min="150" max="800" value="300" step="50">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="slider-group">
+                                    <label>Margin <span id="margin-value">4</span></label>
+                                    <input type="range" class="custom-range" id="margin-slider" min="1" max="10" value="4">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <label>Error Correction <span id="ec-value">Medium (15%)</span></label>
+                            <input type="range" class="custom-range" id="ec-slider" min="0" max="3" value="1" step="1">
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <button class="btn btn-preview mr-2" onclick="generateQR()">
+                                <i class="fas fa-eye"></i> Generate
+                            </button>
+                            <button class="btn btn-generate" onclick="downloadQR()" id="download-btn" disabled>
+                                <i class="fas fa-download"></i> Download PNG
+                            </button>
+                        </div>
+
+                        <div class="preview-container" id="preview-container">
+                            <h5 class="mb-3"><i class="fas fa-image"></i> QR Code Preview</h5>
+                            <canvas id="qr-canvas"></canvas>
+                            <div class="mt-3">
+                                <button class="btn btn-generate" onclick="downloadQR()">
+                                    <i class="fas fa-download"></i> Download PNG
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features">
+                    <div class="row">
+                        <div class="col-md-4 feature-item">
+                            <i class="fas fa-paint-brush"></i>
+                            <h5>6 Styles</h5>
+                            <p>Squares, dots, rounded, diamonds, stars, striped</p>
+                        </div>
+                        <div class="col-md-4 feature-item">
+                            <i class="fas fa-palette"></i>
+                            <h5>Custom Colors</h5>
+                            <p>Choose any foreground & background color</p>
+                        </div>
+                        <div class="col-md-4 feature-item">
+                            <i class="fas fa-bolt"></i>
+                            <h5>Instant & Free</h5>
+                            <p>No login, no database, download instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p><i class="fas fa-heart" style="color: #ff6b6b;"></i> Free QR Code Generator - No login, no limits!</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+    <script>
+        let selectedStyle = 'squares';
+        let qrGenerated = false;
+
+        const ecLevels = ['L (7%)', 'M (15%)', 'Q (25%)', 'H (30%)'];
+        const ecMap = { 0: 'L', 1: 'M', 2: 'Q', 3: 'H' };
+
+        document.getElementById('fg-color').addEventListener('input', function() {
+            document.getElementById('fg-value').textContent = this.value;
+            clearFgPreset();
+        });
+
+        document.getElementById('bg-color').addEventListener('input', function() {
+            document.getElementById('bg-value').textContent = this.value;
+            clearBgPreset();
+        });
+
+        document.getElementById('size-slider').addEventListener('input', function() {
+            document.getElementById('size-value').textContent = this.value;
+        });
+
+        document.getElementById('margin-slider').addEventListener('input', function() {
+            document.getElementById('margin-value').textContent = this.value;
+        });
+
+        document.getElementById('ec-slider').addEventListener('input', function() {
+            document.getElementById('ec-value').textContent = ecLevels[this.value];
+        });
+
+        function selectStyle(el) {
+            document.querySelectorAll('.style-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            selectedStyle = el.dataset.style;
+        }
+
+        function setFgColor(el) {
+            document.querySelectorAll('#fg-presets .preset-color').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('fg-color').value = el.dataset.color;
+            document.getElementById('fg-value').textContent = el.dataset.color;
+        }
+
+        function setBgColor(el) {
+            document.querySelectorAll('#bg-presets .preset-color').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+            document.getElementById('bg-color').value = el.dataset.color;
+            document.getElementById('bg-value').textContent = el.dataset.color;
+        }
+
+        function clearFgPreset() {
+            document.querySelectorAll('#fg-presets .preset-color').forEach(c => c.classList.remove('active'));
+        }
+
+        function clearBgPreset() {
+            document.querySelectorAll('#bg-presets .preset-color').forEach(c => c.classList.remove('active'));
+        }
+
+        function showError(msg) {
+            document.getElementById('error-message').textContent = msg;
+            document.getElementById('error-alert').style.display = 'block';
+        }
+
+        function hexToRgb(hex) {
+            const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+            return result ? {
+                r: parseInt(result[1], 16),
+                g: parseInt(result[2], 16),
+                b: parseInt(result[3], 16)
+            } : { r: 0, g: 0, b: 0 };
+        }
+
+        function generateQR() {
+            const url = document.getElementById('url-input').value.trim();
+            if (!url) {
+                showError('Please enter a URL or text!');
+                return;
+            }
+
+            document.getElementById('error-alert').style.display = 'none';
+
+            const size = parseInt(document.getElementById('size-slider').value);
+            const margin = parseInt(document.getElementById('margin-slider').value);
+            const ecLevel = ecMap[document.getElementById('ec-slider').value];
+            const fgColor = document.getElementById('fg-color').value;
+            const bgColor = document.getElementById('bg-color').value;
+            const fgRgb = hexToRgb(fgColor);
+            const bgRgb = hexToRgb(bgColor);
+
+            try {
+                const qr = qrcode(0, ecLevel);
+                qr.addData(url);
+                qr.make();
+
+                const moduleCount = qr.getModuleCount();
+                const cellSize = Math.floor((size - margin * 2) / moduleCount);
+                const actualSize = cellSize * moduleCount + margin * 2;
+
+                const canvas = document.getElementById('qr-canvas');
+                canvas.width = actualSize;
+                canvas.height = actualSize;
+                const ctx = canvas.getContext('2d');
+
+                ctx.fillStyle = bgColor;
+                ctx.fillRect(0, 0, actualSize, actualSize);
+
+                ctx.fillStyle = fgColor;
+
+                for (let row = 0; row < moduleCount; row++) {
+                    for (let col = 0; col < moduleCount; col++) {
+                        if (qr.isDark(row, col)) {
+                            const x = margin + col * cellSize;
+                            const y = margin + row * cellSize;
+
+                            switch (selectedStyle) {
+                                case 'squares':
+                                    ctx.fillRect(x, y, cellSize, cellSize);
+                                    break;
+
+                                case 'dots':
+                                    ctx.beginPath();
+                                    ctx.arc(x + cellSize / 2, y + cellSize / 2, cellSize / 2, 0, Math.PI * 2);
+                                    ctx.fill();
+                                    break;
+
+                                case 'rounded':
+                                    const r = cellSize * 0.3;
+                                    ctx.beginPath();
+                                    ctx.moveTo(x + r, y);
+                                    ctx.lineTo(x + cellSize - r, y);
+                                    ctx.quadraticCurveTo(x + cellSize, y, x + cellSize, y + r);
+                                    ctx.lineTo(x + cellSize, y + cellSize - r);
+                                    ctx.quadraticCurveTo(x + cellSize, y + cellSize, x + cellSize - r, y + cellSize);
+                                    ctx.lineTo(x + r, y + cellSize);
+                                    ctx.quadraticCurveTo(x, y + cellSize, x, y + cellSize - r);
+                                    ctx.lineTo(x, y + r);
+                                    ctx.quadraticCurveTo(x, y, x + r, y);
+                                    ctx.closePath();
+                                    ctx.fill();
+                                    break;
+
+                                case 'diamonds':
+                                    ctx.beginPath();
+                                    ctx.moveTo(x + cellSize / 2, y);
+                                    ctx.lineTo(x + cellSize, y + cellSize / 2);
+                                    ctx.lineTo(x + cellSize / 2, y + cellSize);
+                                    ctx.lineTo(x, y + cellSize / 2);
+                                    ctx.closePath();
+                                    ctx.fill();
+                                    break;
+
+                                case 'star':
+                                    drawStar(ctx, x + cellSize / 2, y + cellSize / 2, 5, cellSize / 2, cellSize / 4);
+                                    ctx.fill();
+                                    break;
+
+                                case 'striped':
+                                    const stripeWidth = cellSize / 3;
+                                    for (let s = 0; s < 3; s++) {
+                                        ctx.fillRect(x + s * stripeWidth, y, stripeWidth - 1, cellSize);
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                }
+
+                document.getElementById('preview-container').classList.add('show');
+                document.getElementById('download-btn').disabled = false;
+                qrGenerated = true;
+
+            } catch (e) {
+                showError('Error generating QR code: ' + e.message);
+            }
+        }
+
+        function drawStar(ctx, cx, cy, spikes, outerRadius, innerRadius) {
+            let rot = Math.PI / 2 * 3;
+            let step = Math.PI / spikes;
+
+            ctx.beginPath();
+            ctx.moveTo(cx, cy - outerRadius);
+
+            for (let i = 0; i < spikes; i++) {
+                ctx.lineTo(cx + Math.cos(rot) * outerRadius, cy + Math.sin(rot) * outerRadius);
+                rot += step;
+                ctx.lineTo(cx + Math.cos(rot) * innerRadius, cy + Math.sin(rot) * innerRadius);
+                rot += step;
+            }
+
+            ctx.lineTo(cx, cy - outerRadius);
+            ctx.closePath();
+        }
+
+        function downloadQR() {
+            if (!qrGenerated) {
+                showError('Please generate a QR code first!');
+                return;
+            }
+
+            const canvas = document.getElementById('qr-canvas');
+            const link = document.createElement('a');
+            link.download = 'qrcode.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        document.getElementById('url-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') generateQR();
+        });
+    </script>
+</body>
+</html>
