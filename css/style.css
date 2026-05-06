@@ -295,7 +295,8 @@ footer p {
     margin: 0;
 }
 
-.btn-report {
+.btn-report-link {
+    display: inline-block;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
@@ -304,61 +305,15 @@ footer p {
     font-size: 0.85rem;
     font-weight: 500;
     margin-top: 12px;
+    text-decoration: none;
     transition: all 0.3s;
 }
 
-.btn-report:hover {
+.btn-report-link:hover {
     background: rgba(255, 255, 255, 0.25);
     color: white;
     transform: translateY(-1px);
-}
-
-.btn-report-submit {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    border: none;
-    border-radius: 8px;
-    padding: 10px 25px;
-    color: white;
-    font-weight: 600;
-    transition: all 0.3s;
-}
-
-.btn-report-submit:hover {
-    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
-    color: white;
-    transform: translateY(-1px);
-}
-
-.modal-content {
-    border-radius: 15px;
-    border: none;
-    overflow: hidden;
-}
-
-.modal-header {
-    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-    color: white;
-    border: none;
-    padding: 20px 25px;
-}
-
-.modal-header .close {
-    color: white;
-    opacity: 0.8;
-    text-shadow: none;
-}
-
-.modal-header .close:hover {
-    opacity: 1;
-}
-
-.modal-body {
-    padding: 25px;
-}
-
-.modal-footer {
-    border: none;
-    padding: 15px 25px 25px;
+    text-decoration: none;
 }
 
 .alert { border-radius: 12px; }
