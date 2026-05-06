@@ -204,3 +204,27 @@ function downloadQR() {
 document.getElementById('url-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') generateQR();
 });
+
+function submitReport() {
+    const message = document.getElementById('report-message').value.trim();
+    if (!message) {
+        alert('Please describe the issue you encountered.');
+        return;
+    }
+
+    const name = document.getElementById('report-name').value.trim() || 'Anonymous';
+    const email = document.getElementById('report-email').value.trim() || 'Not provided';
+    const type = document.getElementById('report-type').value;
+
+    const subject = encodeURIComponent(`[QR Generator] ${type}: Report from ${name}`);
+    const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nIssue Type: ${type}\n\nDescription:\n${message}\n\n---\nBrowser: ${navigator.userAgent}\nURL: ${window.location.href}`
+    );
+
+    window.location.href = `mailto:joni911@example.com?subject=${subject}&body=${body}`;
+
+    $('#reportModal').modal('hide');
+    document.getElementById('report-form').reset();
+
+    alert('Thank you for your report! Your email client will open to send the report.');
+}
