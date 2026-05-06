@@ -13,7 +13,7 @@ Generate beautiful custom QR codes instantly - **100% Free, No Login Required!**
 
 ## 🚀 Live Demo
 
-Try it now: [freeqr.pages.dev](https://freeqr.pages.dev) *(replace with your actual URL)*
+Try it now: **[https://joni911.github.io/freeqr/](https://joni911.github.io/freeqr/)**
 
 ## 📦 Deploy Your Own
 
